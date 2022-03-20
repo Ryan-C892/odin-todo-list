@@ -3,10 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="/dist/main.js"></script>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="/dist/main.css">
+    <script src="/dist/main.js" defer></script>
 </head>
 <body>
-    
+    <main id="main">
+        <!--Sidebar-->
+        <aside id="sidebar">
+            <h2>My Todo List</h2>
+            <div class="task-list">
+                <h3>
+                    <img src="/dist/images/folder-outline.svg" alt="folder">
+                    My Tasks
+                </h3>
+                <ul id="data-list"></ul>
+            </div>
+            <form action="#" id="new-list-form">
+                <input type="text" id="new-list-input" placeholder="Add a new list">
+                <img src="/dist/images/plus-circle-outline.svg" alt="add">
+            </form>
+            <button id="delete-btn">
+                Delete
+                <img src="/dist/images/delete-circle-outline.svg" alt="delete">
+            </button>
+        </aside>
+        <!--Main Content-->
+        <section id="data-list-display">
+            <div class="todo-list">
+                <div class="todo-heading">
+                    <h2 id="data-list-title">
+                        <img src="/dist/images/format-list-bulleted.svg" alt="list">
+                        Title
+                    </h2>
+                </div>
+                
+                <div class="add-todo">
+                    <div class="buttons">
+                        <button>
+                            <img id="trigger" src="/dist/images/plus-circle-outline.svg" alt="add">
+                        </button>
+                        <button>
+                            Clear Tasks
+                            <img src="/dist/images/close-circle-outline.svg" alt="close">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="modal" class="modal">
+            <div class="modal-container">
+                <h2>New Task</h2>
+                <span id="closeBtn" class="close-btn"><img src="/dist/images/close.svg" alt="close-btn"></span>
+                <form action="#" id="new-task-from">
+                    <label for="title">Task title:</label>
+                    <br>
+                    <input type="text" id="title" placeholder="Add task title" required="">
+                    <br>
+                    <label for="due-date">Due date:</label>
+                    <input type="date" name="due-date" id="due-date">
+                    <br>
+                    <label for="description">Description:</label>
+                    <br>
+                    <textarea name="description" id="description" cols="30" rows="7"></textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

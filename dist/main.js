@@ -1,1 +1,1 @@
-console.log("Hello World!");
+(()=>{console.log("Hello World!");let e=document.querySelector(".modal"),t=document.querySelector(".trigger"),o=document.querySelector(".close-btn");function c(){e.classList.toggle(".show-modal")}t.addEventListener("click",c),o.addEventListener("click",c),window.addEventListener("click",(function(t){t.target==e&&c()}))})();
