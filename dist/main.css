@@ -1,3 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Damion&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+/* Borderbox Fix */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html, body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Main Settings */
+main {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
+}
+/* Aside Settings */
+aside {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    min-height: 100vh;
+    background-color: #E1E8ED;
+}
+aside h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.task-list {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 55px;
+}
+.task-list h3, img[alt="folder"] {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.task-list-header {
+    font-size: 1.2rem;
+}
+.new-list-form-container {
+    padding: 10px;
+}
+.new-list-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new-list-form, img[alt="add"] {
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+}
+.new-list-form, input {
+    margin-left: 10px;
+    margin-right: -35px;
+    font-size: 1.2rem;
+    width: 90%;
+    background-color: #657786;
+    border-radius: 5px;
+}
+.new-list-form input {
+    padding: 5px;
+}
+.new-list-form, input::placeholder {
+    color: #000;
+    opacity: 1;
+}
+.delete-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    margin: 15px 0;
+    background: none;
+}
+.delete-btn, p {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+/* Data Display Settings */
+section {
+    width: 85%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0 auto;
+}
+.todo-list-heading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    background-color: #657786;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 25%;
+}
+.todo-list-heading h2, img[alt="list"] {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    color: #E1E8ED;
+}
+/* Generated ToDo List Settings */
+.todo-container {
+    margin: 5px 10px 5px 10px;
+    border-radius: 10px;
+    background-color: #E1E8ED;
+    color: #657786;
+}
+.todo-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.task {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 15px 0px 15px;
+    color: #14171A;
+    font-size: 1.1rem;
+}
+.task input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+.task label {
+    content:"";
+    height: 2px;
+    transform: scale(0);/* Important for generating text via JavaScript */
+}
+/* Edit Settings */
+
+/* Add ToDo List Settings */
+.add-todo {
+    background-color: #E1E8ED;
+    padding: 5px;
+    margin: 0 10px 0 10px;
+    border-radius: 10px;
+}
+.add-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+.add-buttons button {
+    display: flex;
+    align-items: center;
+    background: none;
+    color: #657786;
+}
+#delete p {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+/* Modal Settings */
 .modal {
     position: fixed;
     left: 0;

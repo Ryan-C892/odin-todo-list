@@ -8,44 +8,62 @@
     <script src="/dist/main.js" defer></script>
 </head>
 <body>
+    <!--Main-->
     <main id="main">
         <!--Sidebar-->
         <aside id="sidebar">
             <h2>My Todo List</h2>
             <div class="task-list">
-                <h3>
+                <h3 class="task-list-header">
                     <img src="/dist/images/folder-outline.svg" alt="folder">
                     My Tasks
                 </h3>
                 <ul id="data-list"></ul>
             </div>
-            <form action="#" id="new-list-form">
-                <input type="text" id="new-list-input" placeholder="Add a new list">
-                <img src="/dist/images/plus-circle-outline.svg" alt="add">
-            </form>
-            <button id="delete-btn">
-                Delete
-                <img src="/dist/images/delete-circle-outline.svg" alt="delete">
-            </button>
+            <div class="new-list-form-container">
+                <form action="#" id="new-list-form" class="new-list-form">
+                    <img src="/dist/images/plus-circle.svg" alt="add">
+                    <input type="text" id="new-list-input" placeholder="Add a new list" maxlength="16">
+                </form>
+                <button id="delete-btn" class="delete-btn">
+                    <img src="/dist/images/delete-circle-outline.svg" alt="delete">
+                    <p>Delete</p>
+                </button>
+            </div>
         </aside>
-        <!--Main Content-->
+        <!--Data Display-->
         <section id="data-list-display">
             <div class="todo-list">
-                <div class="todo-heading">
+                <div class="todo-list-heading">
                     <h2 id="data-list-title">
                         <img src="/dist/images/format-list-bulleted.svg" alt="list">
-                        Title
+                        <p>Title</p>
                     </h2>
                 </div>
-                
+                <!--Create Todo List Task with JavaScript-->
+                <div class="generated-list">
+                    <div class="todo-container">
+                        <div class="todo-content">
+                            <div class="task">
+                                <input id="#" type="checkbox">
+                                <label for="#"></label>
+                                <button class="editBtn">
+                                    <img src="/dist/images/square-edit-outline.svg" alt="edit">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Add ToDo List-->
                 <div class="add-todo">
-                    <div class="buttons">
-                        <button>
-                            <img id="trigger" src="/dist/images/plus-circle-outline.svg" alt="add">
+                    <div class="add-buttons">
+                        <button id="add">
+                            <img class="trigger" src="/dist/images/plus-circle-outline.svg" alt="add">
+                            <p>Add Tasks</p>
                         </button>
-                        <button>
-                            Clear Tasks
+                        <button id="delete">
                             <img src="/dist/images/close-circle-outline.svg" alt="close">
+                            <p>Clear Tasks</p>
                         </button>
                     </div>
                 </div>
