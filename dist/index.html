@@ -18,6 +18,7 @@
                     <img src="/dist/images/folder-outline.svg" alt="folder">
                     My Tasks
                 </h3>
+                <!--Generated data list-->
                 <ul id="data-list"></ul>
             </div>
             <div class="new-list-form-container">
@@ -44,11 +45,13 @@
                 <div class="generated-list">
                     <div class="todo-container">
                         <div class="todo-content">
+                            <!--Task-->
                             <div class="task">
                                 <input id="#" type="checkbox">
+                                <!--Task Title-->
                                 <label for="#"></label>
-                                <button class="editBtn">
-                                    <img src="/dist/images/square-edit-outline.svg" alt="edit">
+                                <button id="edit">
+                                    <img class="trigger2" src="/dist/images/square-edit-outline.svg" alt="edit">
                                 </button>
                             </div>
                         </div>
@@ -74,6 +77,27 @@
             <div class="modal-container">
                 <h2>New Task</h2>
                 <span id="closeBtn" class="close-btn"><img src="/dist/images/close.svg" alt="close-btn"></span>
+                <form action="#" id="new-task-from">
+                    <label for="title">Task title:</label>
+                    <br>
+                    <input type="text" id="title" placeholder="Add task title" required="">
+                    <br>
+                    <label for="due-date">Due date:</label>
+                    <input type="date" name="due-date" id="due-date">
+                    <br>
+                    <label for="description">Description:</label>
+                    <br>
+                    <textarea name="description" id="description" cols="30" rows="7"></textarea>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <!--Edit Modal-->
+        <div id="edit" class="modal2">
+            <div class="modal-container">
+                <h2>Edit Task</h2>
+                <span id="closeBtn" class="close-btn2"><img src="/dist/images/close.svg" alt="close-btn"></span>
                 <form action="#" id="new-task-from">
                     <label for="title">Task title:</label>
                     <br>
