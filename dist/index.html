@@ -21,11 +21,12 @@
                 <!--Generated data list-->
                 <ul id="data-list"></ul>
             </div>
-            <div class="new-list-form-container">
-                <form action="#" id="new-list-form" class="new-list-form">
-                    <img src="/dist/images/plus-circle.svg" alt="add">
-                    <input type="text" id="new-list-input" placeholder="Add a new list" maxlength="16">
-                </form>
+            <div class="new-list-container">
+                <button class="addBtn" id="add">
+                    <img class="trigger" src="/dist/images/plus-circle.svg" alt="add">
+                    <p>Add List</p>
+                </button>
+
                 <button id="delete-btn" class="delete-btn">
                     <img src="/dist/images/delete-circle-outline.svg" alt="delete">
                     <p>Delete</p>
@@ -72,12 +73,12 @@
                 </div>
             </div>
         </section>
-        <!--Modal-->
+        <!--Task Modal
         <div id="modal" class="modal">
             <div class="modal-container">
                 <h2>New Task</h2>
                 <span id="closeBtn" class="close-btn"><img src="/dist/images/close.svg" alt="close-btn"></span>
-                <form action="#" id="new-task-from">
+                <form action="#" id="new-task-form">
                     <label for="title">Task title:</label>
                     <br>
                     <input type="text" id="title" placeholder="Add task title" required="">
@@ -92,8 +93,8 @@
                     <input type="submit" value="Submit">
                 </form>
             </div>
-        </div>
-        <!--Edit Modal-->
+        </div>-->
+        <!--Edit Modal
         <div id="edit" class="modal2">
             <div class="modal-container">
                 <h2>Edit Task</h2>
@@ -111,6 +112,34 @@
                     <textarea name="description" id="description" cols="30" rows="7"></textarea>
                     <br>
                     <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>-->
+        <!--Add New Project-->
+        <div id="modal" class="modal">
+            <div class="modal-container">
+                <h2>Add a New Project</h2>
+                <span id="closeBtn" class="close-btn"><img src="/dist/images/close.svg" alt="close-btn"></span>
+                <form action="#" id="newProjectForm">
+                    <label for="title" id="form-label">Title
+                        <input type="text" id="title" name="title" placeholder="Project Title">
+                    </label>
+                    <br>
+                    <label for="date">Date
+                        <input type="date" name="due-date" id="due-date">
+                    </label>
+                    <br>
+                    <label for="priority">Priority 
+                        <select name="priority" id="priority">
+                            <option value="Not Important">Not Important</option>
+                            <option value="Important">Important</option>
+                            <option value="Very Important">Very Important</option>
+                        </select>
+                    </label>
+                    <br>
+                    <label for="done">Done<input type="checkbox" id="read" name="checkbox" value=""></label>
+                    <br>
+                    <input type="submit" value="Submit" id="add"></input>
                 </form>
             </div>
         </div>
