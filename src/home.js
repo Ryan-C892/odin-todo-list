@@ -1,3 +1,6 @@
+//Global Selectors
+const newTaskForm = document.getElementById("newProjectForm");
+
 function createModals() {
     
     // Add Task Modal //
@@ -59,7 +62,7 @@ function createBackground() {
 // This project object should have at least title adn todos (array od todo items, empty by default).
 // Later add button that will call that function and create new projects.
 // ToDo Class
-class Todo {
+class Task {
     constructor(title, date, priority, done){
         this.title = title;
         this.date = date;
@@ -67,41 +70,110 @@ class Todo {
         this.done = done;
     }
 }
-// Project Class
-class Project {
-    static displayTodo() {
-        const projects = Storage.getLists();
-        projects.forEach((project) => Project.addProject(project));
+// EventHandler class: Handle Events
+class EventHandler {
+    static displayTasks() {
+        const tasks = Storage.getTasks();
+        tasks.forEach((task)=> EventHandler.addTaskList(task));
     }
-    // Add project
-    static addProject(project) {
-        const list = document.getElementById("data-list");
-        const listItem = document.createElement('li');
+    // Add Task List
+    static addTaskList(task) {
+        const taskList = document.getElementById("task");
+        const taskItem = document.createElement('li');
 
-        listItem.innerHTML = `
-            <h3>
-                <img src="/dist/images/circle.svg" alt="circle">
-                <p>${project.title}</p>            
-            </h3>
-        `;
-        list.appendChild(listItem);
+        taskItem.innerHTML = `
+        <p>${task.title}</p>
+        <p>${task.date}</p>
+        <p>${task.priority}</p>
+        <p>${task.done}</p>`;
+
+        taskList.appendChild(taskItem);
     }
-    static addTodo() {
-
+    // Show Validation
+    static showAlert(message, className) {
+        const div = document.createElement('div');
+        div.className = `${className}`;
+        div.appendChild(document.createTextNode(message));
+        const newTaskForm = document.getElementById("newProjectForm");
+        const label = document.getElementById("form-label");
+        newTaskForm.insertBefore(div, label);
+        // Vanish
+        setTimeout(() => document.querySelector('.validate').remove(), 5000);
+        setTimeout(() => document.querySelector('.success').remove(), 5000);
+    }
+    // Clear Form
+    static clearForm() {
+        document.getElementById("title").value = '';
+        document.getElementById("date").value = '';
+        document.getElementById("priority").value = '';
+        document.getElementById("done").value = false;
     }
 }
 // Storage Class: Handles Storage
 class Storage {
-    static getLists() {
-        let lists;
-        if(localStorage.getItem('lists') === null) {
-            lists = [];
+    static getTasks() {
+        let tasks;
+        if(localStorage.getItem('tasks') === null) {
+            tasks = [];
         } else {
-            lists = JSON.parsel(localStorage.getItem('lists'));
+            tasks = JSON.parse(localStorage.getItem('tasks'));
         }
-        return lists;
+        return tasks;
+    }
+
+    static addTasks(task) {
+        const tasks = Storage.getTasks();
+        tasks.push(task);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    static removeTasks(taskItems) {
+        const tasks = Storage.getTasks();
+        tasks.forEach((task, index) => {
+            if(task.taskItems === taskItems) {
+                tasks.splice(index, 1);
+            }
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 }
+// Display Tasks
+document.addEventListener('DOMContentLoaded', EventHandler.displayTasks);
+
+// Add a Task
+newTaskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Get Form Input Values
+    const title = document.getElementById("title").value;
+    const date = document.getElementById("date").value;
+    const priority = document.getElementById("priority").value;
+    const done = document.getElementById("done").value;
+    // Validation
+    if(title === '' || date === '' || priority === '' || done === '') {
+        EventHandler.showAlert('Please fill in all fields', 'validate');
+    } else {
+        // Task
+        const task = new Task(title, date, priority, done);
+        console.log(task);
+        // Add Task to EventHandler
+        EventHandler.addTaskList(task);
+        // Add Task to Storage
+        Storage.addTasks(task);
+        // Success
+        EventHandler.showAlert('Success!', 'success');
+        // Clear Form
+        EventHandler.clearForm();
+    }
+});
+
+checkbox = document.getElementById("done");
+checkbox.addEventListener('change', (event) => {
+    if(event.target.checked) {
+        checkbox.value = true;
+    } else {
+        checkbox.value = false;
+    }
+});
 
 function loadWebsite() {
     createModals();

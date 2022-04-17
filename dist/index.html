@@ -47,14 +47,15 @@
                     <div class="todo-container">
                         <div class="todo-content">
                             <!--Task-->
-                            <div class="task">
-                                <input id="#" type="checkbox">
-                                <!--Task Title-->
-                                <label for="#"></label>
+                            <ul class="task" id="task">
+                                <!-- Checkbox
+                                <input id="#" type="checkbox">-->
+                                <!--Task Title
+                                <label for="#"></label>-->
                                 <button id="edit">
                                     <img class="trigger2" src="/dist/images/square-edit-outline.svg" alt="edit">
                                 </button>
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -121,24 +122,21 @@
                 <h2>Add a New Project</h2>
                 <span id="closeBtn" class="close-btn"><img src="/dist/images/close.svg" alt="close-btn"></span>
                 <form action="#" id="newProjectForm">
-                    <label for="title" id="form-label">Title
-                        <input type="text" id="title" name="title" placeholder="Project Title">
-                    </label>
+                    <label for="title" id="form-label">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Project Title">
                     <br>
-                    <label for="date">Date
-                        <input type="date" name="due-date" id="due-date">
-                    </label>
+                    <label for="date">Date</label>
+                    <input type="date" name="due-date" id="date">
                     <br>
-                    <label for="priority">Priority 
-                        <select name="priority" id="priority">
-                            <option value="Not Important">Not Important</option>
-                            <option value="Important">Important</option>
-                            <option value="Very Important">Very Important</option>
-                        </select>
-                    </label>
+                    <label for="priority">Priority</label>
+                    <select name="priority" id="priority">
+                        <option value="Not Important">Not Important</option>
+                        <option value="Important">Important</option>
+                        <option value="Very Important">Very Important</option>
+                    </select>
                     <br>
-                    <label for="done">Done<input type="checkbox" id="read" name="checkbox" value=""></label>
-                    <br>
+                    <label for="done">Done</label>
+                    <input type="checkbox" id="done" name="checkbox" value="">
                     <input type="submit" value="Submit" id="add"></input>
                 </form>
             </div>
