@@ -45,6 +45,10 @@ button {
     cursor: pointer;
 }
 
+ul {
+    list-style: none;
+}
+
 /* Main Settings */
 main {
     display: flex;
@@ -172,33 +176,19 @@ section {
     background-color: #E1E8ED;
     color: #657786;
 }
-.todo-content {
+.task ul {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-}
-.task {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 15px 0px 15px;
-    color: #14171A;
+    justify-content: space-around;
+    align-items: center;
     font-size: 1.1rem;
-}
-.task input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-}
-.task label {
-    content:"";
-    height: 2px;
-    transform: scale(0);/* Important for generating text via JavaScript */
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    color: #14171A;
 }
 /* Edit Settings */
-/*#edit {
-/*    margin: 4px 0px 10px 0px;
-/*    padding: 5px 5px 0px 5px;
-/*}
+#edit {
+    margin: 3px 0px;
+}
 /*.modal2 {
 /*    position: fixed;
 /*    left: 0;

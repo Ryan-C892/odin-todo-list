@@ -22,13 +22,16 @@ class EventHandler {
     // Add Task List
     static addTaskList(task) {
         const taskList = document.getElementById("task");
-        const taskItem = document.createElement('li');
+        const taskItem = document.createElement('ul');
 
         taskItem.innerHTML = `
-        <p>${task.title}</p>
-        <p>${task.date}</p>
-        <p>${task.priority}</p>
-        <p>${task.done}</p>`;
+        <li>Title: ${task.title}</li>
+        <li>Due Date: ${task.date}</li>
+        <li>Priority: ${task.priority}</li>
+        <li>Done: ${task.done}</li>
+        <li><button id="edit">
+            <img class="trigger" src="/dist/images/square-edit-outline.svg" alt="edit">
+        </button></li>`;
 
         taskList.appendChild(taskItem);
     }
@@ -43,6 +46,13 @@ class EventHandler {
         // Vanish
         setTimeout(() => document.querySelector('.validate').remove(), 5000);
         setTimeout(() => document.querySelector('.success').remove(), 5000);
+    }
+    // Remove Task from Task List
+    static removeList(e) {
+        if(e.classList.contains('remove')) {
+            el.parentElement.parentElement.remove();
+            EventHandler.showAlertRemoved('Task Removed.', 'task-removed');
+        }
     }
     // Clear Form
     static clearForm() {
@@ -119,7 +129,6 @@ checkbox.addEventListener('change', (event) => {
 });
 
 function createModals() {
-    
     // Add Task Modal //
     let myModal = document.querySelector(".modal");
     let addButton = document.querySelector(".trigger");

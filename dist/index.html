@@ -23,7 +23,7 @@
             </div>
             <div class="new-list-container">
                 <button class="addBtn" id="add">
-                    <img class="trigger" src="/dist/images/plus-circle.svg" alt="add">
+                    <img class="addList" src="/dist/images/plus-circle.svg" alt="add">
                     <p>Add List</p>
                 </button>
 
@@ -43,21 +43,9 @@
                     </h2>
                 </div>
                 <!--Create Todo List Task with JavaScript-->
-                <div class="generated-list">
-                    <div class="todo-container">
-                        <div class="todo-content">
-                            <!--Task-->
-                            <ul class="task" id="task">
-                                <!-- Checkbox
-                                <input id="#" type="checkbox">-->
-                                <!--Task Title
-                                <label for="#"></label>-->
-                                <button id="edit">
-                                    <img class="trigger2" src="/dist/images/square-edit-outline.svg" alt="edit">
-                                </button>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="todo-container">
+                    <!--Task-->
+                    <div class="task" id="task"></div>
                 </div>
                 <!--Add ToDo List-->
                 <div class="add-todo">
@@ -66,7 +54,7 @@
                             <img class="trigger" src="/dist/images/plus-circle-outline.svg" alt="add">
                             <p>Add Tasks</p>
                         </button>
-                        <button id="delete">
+                        <button class="remove" id="delete">
                             <img src="/dist/images/close-circle-outline.svg" alt="close">
                             <p>Clear Tasks</p>
                         </button>
