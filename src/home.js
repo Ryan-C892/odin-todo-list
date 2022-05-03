@@ -29,9 +29,7 @@ class EventHandler {
         <li>Due Date: ${task.date}</li>
         <li>Priority: ${task.priority}</li>
         <li>Done: ${task.done}</li>
-        <li><button id="edit">
-            <img class="trigger" src="/dist/images/square-edit-outline.svg" alt="edit">
-        </button></li>`;
+        <li><a class="remove">Remove</a></li>`;
 
         taskList.appendChild(taskItem);
     }
@@ -48,7 +46,7 @@ class EventHandler {
         setTimeout(() => document.querySelector('.success').remove(), 5000);
     }
     // Remove Task from Task List
-    static removeList(e) {
+    static removeTask(e) {
         if(e.classList.contains('remove')) {
             el.parentElement.parentElement.remove();
             EventHandler.showAlertRemoved('Task Removed.', 'task-removed');
@@ -118,7 +116,15 @@ newTaskForm.addEventListener('submit', (e) => {
         EventHandler.clearForm();
     }
 });
+// Delete Task //
+document.getElementById("task").addEventListener('click', (e)=> {
+    // Delete from EventHandler
+    EventHandler.removeTask(e.target);
+    // Delete from Storage
+    Storage.removeTasks(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
+});
 
+// Checkbox //
 let checkbox = document.getElementById("done");
 checkbox.addEventListener('change', (event) => {
     if(event.target.checked) {
