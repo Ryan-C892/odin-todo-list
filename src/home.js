@@ -45,10 +45,21 @@ class EventHandler {
         setTimeout(() => document.querySelector('.validate').remove(), 5000);
         setTimeout(() => document.querySelector('.success').remove(), 5000);
     }
+    // Show that Task was removed 
+    static showAlertRemoved(message, className) {
+        const div = document.createElement('div');
+        div.className = `${className}`;
+        div.appendChild(document.createTextNode(message));
+        const toDoList = document.querySelector(".todo-list");
+        const toDoContainer = document.querySelector(".todo-container");
+        toDoList.insertBefore(div, toDoContainer);
+        // Vanish
+        setTimeout(()=> document.querySelector('.task-removed').remove(), 5000);
+    }
     // Remove Task from Task List
     static removeTask(e) {
         if(e.classList.contains('remove')) {
-            el.parentElement.parentElement.remove();
+            e.parentElement.parentElement.remove();
             EventHandler.showAlertRemoved('Task Removed.', 'task-removed');
         }
     }
