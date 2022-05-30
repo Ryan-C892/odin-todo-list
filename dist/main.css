@@ -152,7 +152,7 @@ section {
     background-size: cover;
     margin: 0 auto;
 }
-.todo-list-heading {
+#task-title {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -163,161 +163,61 @@ section {
     margin: 10px;
     width: 25%;
 }
-.todo-list-heading h2, img[alt="list"] {
+#task-title, h2, img[alt="list"] {
     display: flex;
     align-items: center;
     margin-left: 5px;
     color: #E1E8ED;
 }
+
 /* Generated ToDo List Settings */
 .todo-container {
     margin: 5px 10px 5px 10px;
+    padding: 10px;
     border-radius: 10px;
-    background-color: #E1E8ED;
-    color: #657786;
 }
-.task ul {
+
+#task {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 100%;
+    background-color: #E1E8ED;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.25);
     font-size: 1.1rem;
     font-family: 'Work Sans', sans-serif;
     font-weight: 700;
     color: #14171A;
 }
+#task td {
+    padding: 0 20px 0 20px;
+}
+
 /* Edit Settings */
 #edit {
     margin: 3px 0px;
 }
-/*.modal2 {
-/*    position: fixed;
-/*    left: 0;
-/*    top: 0;
-/*    width: 100%;
-/*    height: 100%;
-/*    background-color: rgba(0, 0, 0, 0.5);
-/*    opacity: 0;
-/*    visibility: hidden;
-/*    transform: scale(1.1);
-/*    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-/*}
-/*.show-modal2 {
-/*    opacity: 1;
-/*    visibility: visible;
-/*    transform: scale(1.0);
-/*    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-/*}
-/*.close-btn2 {
-/*    float: right;
-/*    position: relative;
-/*    bottom: 30px;
-/*    left: 10px;
-/*    line-height: 0;
-/*    text-align: center;
-/*    cursor: pointer;
-/*    border-radius: 0.25rem;
-/*    background-color: #E1E8ED;
-/*}
+
 /* Add ToDo List Settings */
 .add-todo {
-    background-color: #E1E8ED;
-    padding: 5px;
-    margin: 0 10px 0 10px;
-    border-radius: 10px;
-}
-.add-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    background-color: #E1E8ED;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    border-radius: 10px;
 }
-.add-buttons button {
-    display: flex;
-    align-items: center;
-    background: none;
-    color: #657786;
+.add-todo img {
+    padding-right: 10px;
 }
-#delete p {
-    display: flex;
-    align-items: center;
+.add-todo span {
     font-size: 1rem;
 }
-/*/* Modal Settings */
-/*.modal {
-/*    position: fixed;
-/*    left: 0;
-/*    top: 0;
-/*    width: 100%;
-/*    height: 100%;
-/*    background-color: rgba(0, 0, 0, 0.5);
-/*    opacity: 0;
-/*    visibility: hidden;
-/*    transform: scale(1.1);
-/*    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-/*}
-/*
 
-/*
-/*.close-btn {
-/*    float: right;
-/*    position: relative;
-/*    bottom: 30px;
-/*    left: 10px;
-/*    line-height: 0;
-/*    text-align: center;
-/*    cursor: pointer;
-/*    border-radius: 0.25rem;
-/*    background-color: #E1E8ED;
-/*}
-/*
-/*.close-btn:hover {
-/*    background-color: #1DA1F2;
-/*}
-/*
-/*.show-modal {
-/*    opacity: 1;
-/*    visibility: visible;
-/*    transform: scale(1.0);
-/*    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-/*} 
-/*
-/*#new-task-form {
-/*    display: flex;
-/*    flex-direction: column;
-/*    align-items: flex-start;
-/*}
-/*
-/*#new-list-form, label {
-/*    margin: 10px 0px 0px 16px;
-/*    font-family: 'Roboto', sans-serif;
-/*    font-size: 1.1rem;
-/*}
-/*
-/*#new-task-form input {
-/*    margin: 0 auto;
-/*    padding: 5px;
-/*    background-color: #E1E8ED;
-/*    font-family: 'Roboto', sans-serif;
-/*    font-size: 1rem;
-/*    cursor: text;
-/*}
-/*
-/*#new-task-form textarea {
-/*    margin: 0px auto 10px auto;
-/*    width: 17.7rem;
-/*    border: 1px solid #E1E8ED;
-/*    font-family: 'Roboto', sans-serif;
-/*    cursor: text;
-/*}
-/*
-/*#new-task-form input[type="submit"] {
-/*    margin: 0 auto;
-/*    padding: 10px;
-/*    font-size: 1.1rem;
-/*    color: #E1E8ED;
-/*    background-color: #657786;
-/*    cursor: pointer;
-/*}
 /* New Project Settings */
 #modal {
     margin: 4px 0px 10px 0px;
@@ -346,6 +246,10 @@ section {
     padding: 12px 20px;
     width: 380px;
     border-radius: 10px;
+}
+
+.modal-container h2 {
+    color: #000;
 }
 
 .show-modal {
