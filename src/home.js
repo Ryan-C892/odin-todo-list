@@ -181,7 +181,7 @@ function createModals() {
         myModal.classList.toggle("show-modal");
     }
 }
-
+// Create Background //
 function createBackground() {
     // Change Background Image //
     var randomBackground = function() {
