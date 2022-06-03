@@ -56,6 +56,7 @@ main {
     min-height: 100vh;
     font-family: 'Rubik', sans-serif;
 }
+
 /* Aside Settings */
 aside {
     width: 15%;
@@ -63,62 +64,66 @@ aside {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
     min-height: 100vh;
     background-color: #E1E8ED;
 }
-aside h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-.task-list {
+
+.data-list-container {
+    position: fixed;
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 55px;
 }
-.task-list h3, img[alt="folder"] {
+
+.data-list-container h3, img[alt="folder"] {
     display: flex;
     align-items: center;
     margin-right: 10px;
 }
-.task-list-header {
+
+.data-list-header {
     font-size: 1.2rem;
+    margin: 20px auto;
+    padding: 5px;
+    background-color: #AAB8C2;
+    border-radius: 5px;
 }
-.new-list-form-container {
-    padding: 10px;
-}
-.new-list-form {
+
+.new-list-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    width: 50%;
 }
-.addBtn, img[alt="add"] {
-    display: flex;
-    align-items: center;
-    margin-left: 5px;
-}
+
 .addBtn {
-    margin-left: 10px;
-    margin-right: 0px;
-    padding: 2px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 15px 10px;
+    padding: 5px;
     font-size: 1.2rem;
     width: 100%;
     background-color: #AAB8C2;
     border-radius: 5px;
 }
+
 .delete-btn {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 5px;
-    margin: 15px 0;
-    background: none;
+    margin: 15px 10px;
+    width: 100%;
+    background-color: #AAB8C2;
+    border-radius: 5px;
 }
+
 .delete-btn, p {
     margin-left: 10px;
     font-size: 1.2rem;
 }
+
 /* Generated Data-list Settings */
 #data-list {
     margin: 0 auto;
@@ -126,6 +131,7 @@ aside h2 {
     width: 100%;
     font-size: 1.5rem;
 }
+
 #data-list li {
     list-style: none;
     text-align: center;
@@ -144,6 +150,7 @@ aside h2 {
     background-color: #657786;
     border-radius: 5px;
 }
+
 /* Data Display Settings */
 section {
     width: 85%;
@@ -152,21 +159,23 @@ section {
     background-size: cover;
     margin: 0 auto;
 }
+
 #task-title {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex: 1;
     background-color: #657786;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px;
     width: 25%;
 }
+
 #task-title, h2, img[alt="list"] {
     display: flex;
     align-items: center;
-    margin-left: 5px;
+    margin-left: 10px;
     color: #E1E8ED;
 }
 
@@ -183,8 +192,6 @@ section {
     margin: 0 auto;
     padding: 10px;
     max-width: 100%;
-    background-color: #E1E8ED;
-    border: 2px solid #fff;
     border-radius: 20px;
     box-shadow: 0 5px 8px rgba(0,0,0,0.25);
     font-size: 1.1rem;
@@ -192,6 +199,7 @@ section {
     font-weight: 700;
     color: #14171A;
 }
+
 #task td {
     padding: 0 20px 0 20px;
 }
@@ -206,14 +214,16 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #E1E8ED;
     padding: 10px;
     margin: 0 10px 0 10px;
-    border-radius: 10px;
+    background-color: #E1E8ED;
+    border-radius: 5px;
 }
+
 .add-todo img {
-    padding-right: 10px;
+    margin-right: 10px;
 }
+
 .add-todo span {
     font-size: 1rem;
 }
