@@ -13,13 +13,15 @@
         <!--Sidebar-->
         <aside id="sidebar">
            <br>
-            <div class="data-list-container">
-                <h3 class="data-list-header">
+            <div class="project-list-container">
+                <h3 class="project-list-header">
                     <img src="/dist/images/folder-outline.svg" alt="folder">
-                    My Tasks
+                    Task App
                 </h3>
                 <!--Data-List-->
-                <ul id="data-list"></ul>
+                <div id="project-menu">
+                    <button class="project-item" data-index="0">Default Project</button>
+                </div>
             </div>
             <!--Add/Delete List-->
             <div class="new-list-container">
@@ -38,7 +40,7 @@
         <section id="task-container">
             <h2 id="task-title">
                 <img src="/dist/images/format-list-bulleted.svg" alt="list">
-                <p>Title</p>
+                <p>Default Project</p>
             </h2>
             <!--Create Todo List Task with JavaScript-->
             <table class="todo-container">
