@@ -1,16 +1,31 @@
 // Create Modals
-function createModals() {
+function createToDoModal() {
     // Add Task Modal //
-    let myModal = document.querySelector(".modal");
+    let todoModal = document.querySelector("#modalToDo");
     let addButton = document.querySelector(".trigger");
-    let closeButton = document.querySelector(".close-btn");
+    let closeButton = document.querySelector(".close-todo");
 
     addButton.onclick = function() {
-        myModal.classList.toggle("show-modal");
+        todoModal.classList.toggle("show-modal");
     }
 
     closeButton.onclick = function() {
-        myModal.classList.toggle("show-modal");
+        todoModal.classList.toggle("show-modal");
+    }
+}
+
+function createProjectModal() {
+    // Add Project Modal //
+    let projectModal = document.querySelector("#modalNewProject");
+    let addButton = document.querySelector(".addList");
+    let closeButton = document.querySelector(".close-project");
+
+    addButton.onclick = function() {
+        projectModal.classList.toggle("show-modal");
+    }
+
+    closeButton.onclick = function() {
+        projectModal.classList.toggle("show-modal");
     }
 }
 // Create Background //
@@ -33,7 +48,8 @@ function createBackground() {
 }
 
 function loadWebsite() {
-    createModals();
+    createToDoModal();
+    createProjectModal();
     createBackground();
 }
 

@@ -128,8 +128,12 @@ const createToDo =()=> {
         var priority = document.getElementById("priority").value;
         var done = document.getElementById("done").value;
         // Validation
+        var todaysDate = new Date();
+        todaysDate.setHours(0,0,0,0);
         if(title === '' || date === '' || priority === '') {
-            EventHandler.showAlert('Please fill in all fields', 'validate');
+            EventHandler.showAlert('Please fill in all fields.', 'validate');
+        } else if (new Date(date) < todaysDate) {
+            EventHandler.showAlert('This date has already passed! Please enter another date.', 'validate');
         } else {
             // Task
             var task = new Task(title, date, priority, done);
