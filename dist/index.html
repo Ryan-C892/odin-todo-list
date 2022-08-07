@@ -20,7 +20,8 @@
                 </h3>
                 <!--Project-List-->
                 <div id="project-menu">
-                    <button class="project-item" data-index="0"></button>
+                    <button class="default-project-item" data-index="0"></button>
+                    <button class="new-project-item" data-index="0">Create New Project</button>
                 </div>
             </div>
             <!--Add/Delete List-->
@@ -54,10 +55,35 @@
             </button>
         </section>
         <!--Add New ToDo List-->
-        <div id="modal" class="modal">
+        <div id="modalToDo" class="modal">
+            <div class="modal-container">
+                <h2>Add a New ToDo List</h2>
+                <span id="closeBtn" class="close-todo"><img src="/dist/images/close.svg" alt="close-btn"></span>
+                <form action="#" id="newProjectForm">
+                    <label for="title" id="form-label">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Project Title">
+                    <br>
+                    <label for="date">Date</label>
+                    <input type="date" name="due-date" id="date">
+                    <br>
+                    <label for="priority">Priority</label>
+                    <select name="priority" id="priority">
+                        <option value="Not Important">Not Important</option>
+                        <option value="Important">Important</option>
+                        <option value="Very Important">Very Important</option>
+                    </select>
+                    <br>
+                    <label for="done">Done</label>
+                    <input type="checkbox" id="done" name="checkbox" value="">
+                    <input type="submit" value="Submit" id="add"></input>
+                </form>
+            </div>
+        </div>
+        <!--Add New Project-->
+        <div id="modalNewProject" class="modal">
             <div class="modal-container">
                 <h2>Add a New Project</h2>
-                <span id="closeBtn" class="close-btn"><img src="/dist/images/close.svg" alt="close-btn"></span>
+                <span id="closeBtn" class="close-project"><img src="/dist/images/close.svg" alt="close-btn"></span>
                 <form action="#" id="newProjectForm">
                     <label for="title" id="form-label">Title</label>
                     <input type="text" id="title" name="title" placeholder="Project Title">
