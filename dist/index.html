@@ -10,31 +10,47 @@
 <body>
     <!--Main-->
     <main>
+        <!--Header-->
+        <header class="project-list-header">
+            <img src="/dist/images/folder-outline.svg" alt="folder">
+            Task App
+        </header>
         <!--Sidebar-->
         <aside id="sidebar">
-           <br>
             <div class="project-list-container">
-                <h3 class="project-list-header">
-                    <img src="/dist/images/folder-outline.svg" alt="folder">
-                    Task App
-                </h3>
                 <!--Project-List-->
                 <div id="project-menu">
-                    <button class="default-project-item" data-index="0">Default Project</button>
-                    <button class="new-project-item" data-index="0">Create New Project</button>
+                    <a href="#" class="project-link">
+                        <img src="/dist/images/email-outline.svg" alt="folder">
+                        Inbox
+                    </a>
+                    <a href="#" class="project-link">
+                        <img src="/dist/images/calendar-today.svg" alt="folder">
+                        Today
+                    </a>
+                    <a href="#" class="project-link">
+                        <img src="/dist/images/calendar-month.svg" alt="folder">
+                        Next 7 days
+                    </a>
+                    <a href="#" class="project-link">
+                        <img src="/dist/images/alert-circle-outline.svg" alt="folder">
+                        Important
+                    </a>
+                    <a href="#" class="project-link">
+                        <img src="/dist/images/check-circle-outline.svg" alt="folder">
+                        Completed
+                    </a>
                 </div>
             </div>
             <!--Add/Delete List-->
             <div class="new-list-container">
-                <button class="addBtn" id="add">
-                    <img class="addList" src="/dist/images/plus-circle.svg" alt="add">
-                    <p>Add List</p>
-                </button>
-
-                <button id="delete-btn" class="delete-btn">
-                    <img src="/dist/images/delete-circle-outline.svg" alt="delete">
-                    <p>Delete</p>
-                </button>
+                <div class="new-list-header">
+                    <p class="project-title">Projects</p>
+                    <a href="#" class="addBtn" id="add">
+                        <img class="addList" src="/dist/images/plus-circle.svg" alt="add">
+                    </a>
+                </div>
+                <div class="projects-list"></div>
             </div>
         </aside>
         <!--ToDo Display-->

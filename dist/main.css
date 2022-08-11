@@ -57,85 +57,129 @@ main {
     font-family: 'Rubik', sans-serif;
 }
 
+/* Header Settings */
+.project-list-header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 42px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0px 36px;
+    background-color: #AAB8C2;
+}
+
+img[alt="folder"] {
+    width: 1.5%;
+    margin-right: 10px;
+}
+
 /* Aside Settings */
 aside {
     width: 100%;
     max-width: 300px;
+    height: calc(100vh - 60px);
+    padding: 40px 20px 0;
+    overflow: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    min-height: 100vh;
     background-color: #E1E8ED;
-}
-
-.project-list-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.project-list-container h3 {
-    display: flex;
-    align-items: center;
-}
-
-img[alt="folder"] {
-    margin-right: 10px;
-}
-
-.project-list-header {
-    font-size: 1.2rem;
-    margin: 20px auto;
-    padding: 5px;
-    background-color: #AAB8C2;
-    border-radius: 5px;
-}
-
-.new-list-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.addBtn {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 15px 10px;
-    padding: 5px;
-    font-size: 1.2rem;
-    width: 100%;
-    background-color: #AAB8C2;
-    border-radius: 5px;
-}
-
-.delete-btn {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 5px;
-    margin: 15px 10px;
-    width: 100%;
-    background-color: #AAB8C2;
-    border-radius: 5px;
-}
-
-.delete-btn, p {
-    margin-left: 10px;
-    font-size: 1.2rem;
 }
 
 #project-menu {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    margin: 20px auto;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 10px;
+    margin-bottom: 8px;
+    color: #14171A;
+    border-radius: 5px;
+}
+
+.project-link img {
+    width: 1.25em;
+    color: #000;
+    text-align: center;
+}
+
+.project-link.active {
+    background-color: #fff;
+}
+
+/* New Project Container */
+.new-list-container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    font-size: 18px;
     width: 100%;
+    min-height: calc(60vh - 456px);
+}
+
+.new-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #14171A;
+}
+
+.new-list-header p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.addBtn {
+    display: flex;
+    text-align: center;
+    padding: 4px 6px;
+}
+
+.projects-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #14171A;
+    width: 100%;
+    padding: 10px 10px;
+    margin-bottom: 0;
+    text-decoration: none;   
+    cursor: pointer;
+}
+
+.project p {
+    width: 151px;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.delete-btn {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin: 15px 10px;
+    cursor: pointer;
 }
 
 .default-project-item {
@@ -169,7 +213,8 @@ section {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    margin: 0 auto;
+    margin: 0px auto;
+    padding: 40px;
 }
 
 #task-title {
