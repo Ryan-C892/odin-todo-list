@@ -48,37 +48,37 @@ function createBackground() {
     }
 }
 // Render Projects //
-const projectList = document.querySelector(".projects-list");
-
-function renderProjects() {
-    projectList.textContent = '';
-    for (let i = 0; i < projects.projectsList.length; i+=1) {
-        const projectLink = document.createElement('a');
-        projectLink.classList.add('project');
-        projectLink.setAttribute('href', '#');
-        projectLink.setAttribute('data-index', i);
-        projectList.appendChild(projectLink);
-
-        projectLink.innerHTML = `
-        <p>${projects.projectsList[i].title}</p>
-        <a href="#" id="delete-btn" class="delete-btn">
-            <img src="/dist/images/delete-circle-outline.svg" alt="delete">
-        </a>`;
-    }
-}
-
-function createProjectDefault() {
-    projectList.textContent = '';
-    for (let i = 0; i < projects.projectsList.length; i+=1) {
-
-    }
-}
+//const projectList = document.getElementById("projects-list");
+//
+//function renderProjects() {
+//    projectList.textContent = '';
+//    for (let i = 0; i < projects.projectsList.length; i+=1) {
+//        const projectLink = document.createElement('a');
+//        projectLink.classList.add('project');
+//        projectLink.setAttribute('href', '#');
+//        projectLink.setAttribute('data-index', i);
+//        projectList.appendChild(projectLink);
+//
+//        projectLink.innerHTML = `
+//        <p>${projects.projectsList[i].title}</p>
+//        <a href="#" id="delete-btn" class="delete-btn">
+//            <img src="/dist/images/delete-circle-outline.svg" alt="delete">
+//        </a>`;
+//    }
+//}
+//
+//function createProjectDefault() {
+//    projectList.textContent = '';
+//    for (let i = 0; i < projects.projectsList.length; i+=1) {
+//
+//    }
+//}
 
 function loadWebsite() {
     createToDoModal();
     createProjectModal();
     createBackground();
-    renderProjects();
+    //renderProjects();
 }
 
 export default loadWebsite;

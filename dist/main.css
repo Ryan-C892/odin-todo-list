@@ -151,7 +151,7 @@ aside {
     padding: 4px 6px;
 }
 
-.projects-list {
+#projects-list {
     display: flex;
     justify-content: space-between;
 }
@@ -350,13 +350,13 @@ section {
     box-shadow: 0 5px 8px rgba(0,0,0,0.25);
 }
 
-#newProjectForm {
+form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-#newProjectForm, label {
+form, label {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -365,7 +365,7 @@ section {
     margin: 5px;
 }
 
-#newProjectForm input {
+form input {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -377,7 +377,7 @@ section {
     cursor: text;
 }
 
-#newProjectForm select {
+form select {
     margin-left: 15px;
     padding: 5px;
     background-color: #E1E8ED;
@@ -386,7 +386,7 @@ section {
     cursor: text;
 }
 
-#newProjectForm input[type="submit"] {
+form input[type="submit"] {
     margin: 20px auto;
     padding: 10px;
     width: 100%;
