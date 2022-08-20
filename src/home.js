@@ -31,21 +31,18 @@ function createProjectModal() {
 // Create Background //
 function createBackground() {
     // Change Background Image //
-    var randomBackground = function() {
-        var imgArray = ["/dist/images/ashim-d-silva-WeYamle9fDM-unsplash.jpg",
-                        "/dist/images/buzz-andersen-E4944K_4SvI-unsplash.jpg",
-                        "/dist/images/daniel-tong-dxYdPSuBr-U-unsplash.jpg",
-                        "/dist/images/stephen-leonardi-eSNjFDbw_i4-unsplash.jpg",
-                        "/dist/images/maud-bocquillod-bj7EB5my6og-unsplash.jpg",
-                        "/dist/images/john-fowler-9qgKQewttVs-unsplash.jpg"];
-        var getRandomNum = imgArray[Math.floor(Math.random() * (imgArray.length))];
-        document.querySelector("section").style.backgroundImage = "url(" + getRandomNum + ")";
-    }
-
-    window.onload = function() {
-        randomBackground();
-    }
+    var randomImage = [
+        "/dist/images/ashim-d-silva-WeYamle9fDM-unsplash.jpg",
+        "/dist/images/buzz-andersen-E4944K_4SvI-unsplash.jpg",
+        "/dist/images/daniel-tong-dxYdPSuBr-U-unsplash.jpg",
+        "/dist/images/stephen-leonardi-eSNjFDbw_i4-unsplash.jpg",
+        "/dist/images/maud-bocquillod-bj7EB5my6og-unsplash.jpg",
+        "/dist/images/john-fowler-9qgKQewttVs-unsplash.jpg",
+    ];
+    var getRandomNum = Math.floor(Math.random() * (randomImage.length));
+    return randomImage[getRandomNum];
 }
+document.querySelector("section").style.backgroundImage = "url('" + createBackground() + "')";
 // Render Projects //
 //const projectList = document.getElementById("projects-list");
 //
