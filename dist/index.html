@@ -46,12 +46,12 @@
             <div class="new-list-container">
                 <div class="new-list-header">
                     <p class="project-title">Projects</p>
-                    <a href="#" class="addBtn" id="add">
-                        <img class="addList" src="/dist/images/plus-circle.svg" alt="add">
+                    <a href="#" class="addBtn" id="addProject">
+                        <img class="trigger" src="/dist/images/plus-circle.svg" alt="add">
                     </a>
                 </div>
                 
-                <div id="projects-list"></div>
+                <tbody id="project"></tbody>
             </div>
         </aside>
         <!--ToDo Display-->
@@ -66,7 +66,7 @@
                 <tbody id="task"></tbody>
             </table>
             <!--Add ToDo List-->
-            <button class="add-todo" id="add">
+            <button class="add-todo" id="addToDo">
                 <img class="trigger" src="/dist/images/plus-circle-outline.svg" alt="add">
                 <span>Add Tasks</span>
             </button>
@@ -102,7 +102,7 @@
                 <h2>Add a New Project</h2>
                 <span id="closeBtn" class="close-project"><img src="/dist/images/close.svg" alt="close-btn"></span>
                 <form action="#" id="projectForm">
-                    <label for="title" id="form-label">Title</label>
+                    <label for="title" id="form-title">Title</label>
                     <input type="text" id="title" name="title" placeholder="Project Title">
                     <br>
                     <input type="submit" value="Submit" id="add"></input>

@@ -154,9 +154,9 @@ const createToDo =()=> {
         EventHandler.changeDone(e);
     });
     // Remove Task
-    document.getElementById("task").addEventListener('click', (e)=> {
+    document.getElementById("task").addEventListener('click', (event)=> {
         // Remove Task from EventHandler
-        EventHandler.removeTask(e);
+        EventHandler.removeTask(event);
         // Remove Task from Storage
         Storage.removeTasksFromStorage();
     });

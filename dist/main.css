@@ -151,7 +151,7 @@ aside {
     padding: 4px 6px;
 }
 
-#projects-list {
+#project {
     display: flex;
     justify-content: space-between;
 }

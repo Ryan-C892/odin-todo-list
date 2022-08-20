@@ -1,9 +1,8 @@
-import projects from './createProject.js';
 // Create Modals
 function createToDoModal() {
     // Add Task Modal //
     let todoModal = document.querySelector("#modalToDo");
-    let addButton = document.querySelector(".trigger");
+    let addButton = document.getElementById("addToDo");
     let closeButton = document.querySelector(".close-todo");
 
     addButton.onclick = function() {
@@ -18,7 +17,7 @@ function createToDoModal() {
 function createProjectModal() {
     // Add Project Modal //
     let projectModal = document.querySelector("#modalNewProject");
-    let addButton = document.querySelector(".addList");
+    let addButton = document.getElementById("addProject");
     let closeButton = document.querySelector(".close-project");
 
     addButton.onclick = function() {
@@ -40,7 +39,7 @@ function createBackground() {
                         "/dist/images/maud-bocquillod-bj7EB5my6og-unsplash.jpg",
                         "/dist/images/john-fowler-9qgKQewttVs-unsplash.jpg"];
         var getRandomNum = imgArray[Math.floor(Math.random() * (imgArray.length))];
-        document.querySelector("section").style.backgroundImage = 'url('+getRandomNum+')';
+        document.querySelector("section").style.backgroundImage = "url(" + getRandomNum + ")";
     }
 
     window.onload = function() {
