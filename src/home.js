@@ -1,31 +1,24 @@
 // Create Modals
-function createToDoModal() {
-    // Add Task Modal //
-    let todoModal = document.querySelector("#modalToDo");
-    let addButton = document.getElementById("addToDo");
-    let closeButton = document.querySelector(".close-todo");
-
-    addButton.onclick = function() {
-        todoModal.classList.toggle("show-modal");
-    }
-
-    closeButton.onclick = function() {
-        todoModal.classList.toggle("show-modal");
+function createModal() {
+    // Get every open button //
+    let openModal = document.getElementsByClassName("add-modal");
+    // Open modal //
+    for (let i = 0; i < openModal.length; i++) {
+        openModal[i].addEventListener("click", function(){
+            let modal = document.getElementById(this.dataset.modal);
+            modal.classList.toggle("show-modal");
+        }, false);
     }
 }
-
-function createProjectModal() {
-    // Add Project Modal //
-    let projectModal = document.querySelector("#modalNewProject");
-    let addButton = document.getElementById("addProject");
-    let closeButton = document.querySelector(".close-project");
-
-    addButton.onclick = function() {
-        projectModal.classList.toggle("show-modal");
-    }
-
-    closeButton.onclick = function() {
-        projectModal.classList.toggle("show-modal");
+function closeModal() {
+    // Get every close button //
+    let closeModal = document.getElementsByClassName("close-modal");
+    // Close modal //
+    for (let i = 0; i < closeModal.length; i++) {
+        closeModal[i].addEventListener("click", function(){
+            let modal = document.querySelector(".show-modal");
+            modal.classList.toggle("show-modal");
+        }, false);
     }
 }
 // Create Background //
@@ -71,8 +64,8 @@ document.querySelector("section").style.backgroundImage = "url('" + createBackgr
 //}
 
 function loadWebsite() {
-    createToDoModal();
-    createProjectModal();
+    createModal();
+    closeModal();
     createBackground();
     //renderProjects();
 }

@@ -267,21 +267,21 @@ section {
 }
 
 /* Add ToDo List Settings */
-.add-todo {
+.add-modal {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    margin: 0 10px 0 10px;
+    padding: 5px;
+    margin: 0 5px 0 5px;
     background-color: #E1E8ED;
     border-radius: 5px;
 }
 
-.add-todo img {
-    margin-right: 10px;
+#addToDo img {
+    margin-left: 10px;
 }
 
-.add-todo span {
+.add-modal span {
     font-size: 1rem;
 }
 
@@ -326,7 +326,7 @@ section {
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 } 
 
-.close-todo, .close-project {
+.close-modal {
     float: right;
     position: relative;
     bottom: 30px;
