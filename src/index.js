@@ -6,5 +6,4 @@ loadWebsite();
 createToDo();
 createProject();
 
-
 // Create Projects //

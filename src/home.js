@@ -63,10 +63,27 @@ document.querySelector("section").style.backgroundImage = "url('" + createBackgr
 //    }
 //}
 
+// Create Tabs
+function onTabClick(event) {
+    let activeTabs = document.querySelectorAll(".active");
+
+    // deactivate active tabs
+    for(var i = 0; i < activeTabs.length; i++) {
+        activeTabs[i].className = activeTabs[i].className.replace('active', '');
+    }
+
+    console.log(event.target);
+}
+
+const element = document.getElementById("project-tab");
+
+element.addEventListener('click', onTabClick, false);
+
 function loadWebsite() {
     createModal();
     closeModal();
     createBackground();
+    onTabClick();
     //renderProjects();
 }
 
