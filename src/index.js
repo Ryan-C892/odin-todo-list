@@ -1,10 +1,10 @@
 import loadWebsite from './home';
 import createToDo from './createToDo.js';
-import projects from './createProject.js'
+import createProject from './createProject.js'
 
 loadWebsite();
 createToDo();
-projects();
+createProject();
 
 
 // Create Projects //

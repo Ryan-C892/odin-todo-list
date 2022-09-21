@@ -402,7 +402,7 @@ form input[type="submit"] {
     cursor: pointer;
 }
 
-form button[type="button"] {
+form button {
     margin: 20px auto;
     padding: 10px;
     width: 100%;
