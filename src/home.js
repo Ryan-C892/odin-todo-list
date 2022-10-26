@@ -73,6 +73,7 @@ function onTabClick() {
             tabList.querySelectorAll('li').forEach( el => el.classList.remove('active'));
             event.target.parentNode.classList.add('active');
         }
+        console.log("clicked.")
     }
 }
 

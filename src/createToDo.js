@@ -12,6 +12,7 @@ const createToDo =()=> {
             this.date = date;
             this.priority = priority;
             this.done = done;
+            return this;
         }
     }
     // Storage Class
@@ -43,6 +44,7 @@ const createToDo =()=> {
                     localStorage.setItem('tasks', JSON.stringify(taskList));
                 }
             });
+            // setItem needed to fully remove items from array //
             localStorage.setItem('tasks', JSON.stringify(taskList));
         }
     }
