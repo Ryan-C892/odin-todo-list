@@ -79,7 +79,7 @@ img[alt="folder"] {
 aside {
     width: 100%;
     max-width: 300px;
-    height: calc(100vh - 60px);
+    height: 100vh;
     padding: 40px 20px 0;
     overflow: auto;
     display: flex;
