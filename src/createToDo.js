@@ -176,4 +176,4 @@ const createToDo =()=> {
     return {Task, Storage, EventHandler}
 }
 
-export default createToDo();
+export default createToDo;

@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Ryan-C892/odin-todo-list#readme",
   "devDependencies": {
-    "webpack": "^5.70.0",
+    "webpack": "^5.74.0",
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {

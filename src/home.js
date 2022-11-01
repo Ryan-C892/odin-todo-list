@@ -63,26 +63,10 @@ document.querySelector("section").style.backgroundImage = "url('" + createBackgr
 //    }
 //}
 
-// Create Tabs
-function onTabClick() {
-    var tabList = document.getElementById("project-tab");
-    tabList.addEventListener('click', active );
-
-    function active(event) {
-        if(event.target.tagName === 'A') {
-            tabList.querySelectorAll('li').forEach( el => el.classList.remove('active'));
-            event.target.parentNode.classList.add('active');
-        }
-        console.log("clicked.")
-    }
-}
-
-function loadWebsite() {
+const loadWebsite =()=> {
     createModal();
     closeModal();
     createBackground();
-    onTabClick();
-    //renderProjects();
 }
 
 export default loadWebsite;
