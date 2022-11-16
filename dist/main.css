@@ -225,14 +225,12 @@ section {
     background-color: #657786;
     border-radius: 5px;
     padding: 5px;
-    margin: 20px;
+    margin: 30px 0px 0px 0px;
     width: 25%;
 }
 
 #task-title, h2, img[alt="list"] {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
+    padding: 2.5px 5px 2.5px 5px;
     color: #E1E8ED;
 }
 
@@ -270,13 +268,13 @@ section {
 #edit {
     margin: 3px 0px;
 }
-/* Tab Settings */
-#project-tab {
+/* List Settings */
+#project-list {
     display: flex;
     flex-direction: column;
     padding: 10px;
 }
-#project-tab li a {
+#project-list li a {
     display: flex;
     color: #000;
     padding: 8px 16px;
@@ -290,10 +288,20 @@ section {
     border-radius: 20px;
     box-shadow: 0 5px 8px rgba(0,0,0,0.25);
 }
-#project-tab li a:hover:not(.active) {
+#project-list li a:hover:not(.active) {
     background-color: #3786c7;
     border-radius: 20px;
 }
+.trash {
+    display: flex;
+    border: none;
+    background-image: url('/dist/images/delete-circle-outline.svg');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-color: transparent;
+    padding: 11px 15px;
+}
+
 /* Add ToDo List Settings */
 .add-modal {
     display: flex;

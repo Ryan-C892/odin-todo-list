@@ -17,30 +17,28 @@
         </header>
         <!--Sidebar-->
         <aside id="sidebar">
-            <div class="project-list-container">
-                <!--Project-List-->
-                <div id="project-menu">
-                    <a href="#" class="project-link">
-                        <img src="/dist/images/email-outline.svg" alt="folder">
-                        Inbox
-                    </a>
-                    <a href="#" class="project-link">
-                        <img src="/dist/images/calendar-today.svg" alt="folder">
-                        Today
-                    </a>
-                    <a href="#" class="project-link">
-                        <img src="/dist/images/calendar-month.svg" alt="folder">
-                        Next 7 days
-                    </a>
-                    <a href="#" class="project-link">
-                        <img src="/dist/images/alert-circle-outline.svg" alt="folder">
-                        Important
-                    </a>
-                    <a href="#" class="project-link">
-                        <img src="/dist/images/check-circle-outline.svg" alt="folder">
-                        Completed
-                    </a>
-                </div>
+            <!--Sidebar Links-->
+            <div id="project-menu">
+                <a href="#" class="project-link">
+                    <img src="/dist/images/email-outline.svg" alt="folder">
+                    Inbox
+                </a>
+                <a href="#" class="project-link">
+                    <img src="/dist/images/calendar-today.svg" alt="folder">
+                    Today
+                </a>
+                <a href="#" class="project-link">
+                    <img src="/dist/images/calendar-month.svg" alt="folder">
+                    Next 7 days
+                </a>
+                <a href="#" class="project-link">
+                    <img src="/dist/images/alert-circle-outline.svg" alt="folder">
+                    Important
+                </a>
+                <a href="#" class="project-link">
+                    <img src="/dist/images/check-circle-outline.svg" alt="folder">
+                    Completed
+                </a>
             </div>
             <!--Add/Delete List-->
             <div class="new-list-container">
@@ -50,20 +48,15 @@
                         <img class="trigger" src="/dist/images/plus-circle.svg" alt="add">
                     </button>
                 </div>
-                <ul id="project-tab">
-                    <li class="navItems"><a href="#">Default</a></li>
-                    <li class="navItems"><a href="#">Project 1</a></li>
-                    <li class="navItems"><a href="#">Project 2</a></li>
-                    <li class="navItems"><a href="#">Project 3</a></li>
+                <ul id="project-list">
+                    
                 </ul>
-                <tbody id="project"></tbody>
             </div>
         </aside>
         <!--ToDo Display-->
         <section id="task-container">
             <h2 id="task-title">
                 <img src="/dist/images/format-list-bulleted.svg" alt="list">
-                <p>Default Project</p>
             </h2>
             <!--Create Todo List Task with JavaScript-->
             <table class="todo-container">
@@ -76,7 +69,7 @@
                 <img class="trigger" src="/dist/images/plus-circle-outline.svg" alt="add">
             </button>
         </section>
-        <!--Add New ToDo List-->
+        <!--Add New ToDo List Modal-->
         <div id="toDoModal" class="modal-window modal">
             <div class="modal-container">
                 <h2>Add a New ToDo List</h2>
@@ -101,7 +94,7 @@
                 </form>
             </div>
         </div>
-        <!--Add New Project-->
+        <!--Add New Project Modal-->
         <div id="projectModal" class="modal-window modal">
             <div class="modal-container">
                 <h2>Add a New Project</h2>
