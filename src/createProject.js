@@ -6,6 +6,8 @@ const createTabs =()=> {
         if(event.target.tagName === 'A') {
             list.querySelectorAll('li').forEach( el => el.classList.remove('active'));
             event.target.parentNode.classList.add('active');
+        } else {
+            event.target.parentNode.classList.remove('active');
         }
         console.log("clicked.");
     });
@@ -15,17 +17,11 @@ const createTabs =()=> {
         row.innerHTML = `
         <a href="#">Default <button class="trash"></button></a>` 
         list.appendChild(row);
-}
-
-function projectTitle() {
-    var taskTitle = document.getElementById("task-title");
-    var paragraph = document.createElement("p");
-    paragraph.innerHTML = " Default Project ";
-    taskTitle.appendChild(paragraph);
+        var defaultBtn = document.createElement("a");
+        defaultBtn.innerHTML = `Default`
 }
 
 const createProject =()=> {
-    projectTitle();
     createTabs();
 };
 

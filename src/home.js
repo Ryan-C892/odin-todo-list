@@ -1,3 +1,37 @@
+// Create Default
+function createDefault() {
+    /* Container */
+    const container = document.getElementById("task-container");
+    /* Header */
+    var projectHeader = document.createElement("h2");
+    projectHeader.classList.add("task-title");
+    container.appendChild(projectHeader);
+    var paragraph = document.createElement("p");
+    paragraph.innerHTML = " Default Project ";
+    projectHeader.appendChild(paragraph);
+    var headerImg = document.createElement("img");
+    headerImg.src ="/dist/images/format-list-bulleted.svg";
+    headerImg.alt = "list";
+    projectHeader.appendChild(headerImg);
+    /* Task Display */
+    var todoContainer = document.createElement("table");
+    todoContainer.classList.add("todo-container");
+    todoContainer.innerHTML = `<tbody id="task"></tbody>`
+    container.appendChild(todoContainer);
+    /* Add Tasks */
+    var mostImportant = document.createElement("button");
+    mostImportant.setAttribute("class", "add-modal");
+    mostImportant.setAttribute("id", "addToDo");
+    mostImportant.setAttribute("data-modal", "toDoModal");
+    mostImportant.innerHTML = `<span>Add Tasks</span>`
+    container.appendChild(mostImportant);
+    var mostImportantImg = document.createElement("img");
+    /*<img class="trigger" src="/dist/images/plus-circle-outline.svg" alt="add"></img>*/
+    mostImportantImg.classList.add("trigger");
+    mostImportantImg.src = "/dist/images/plus-circle-outline.svg"
+    mostImportantImg.alt = "add"
+    mostImportant.appendChild(mostImportantImg);
+}
 // Create Modals
 function createModal() {
     // Get every open button //
@@ -36,34 +70,13 @@ function createBackground() {
     return randomImage[getRandomNum];
 }
 document.querySelector("section").style.backgroundImage = "url('" + createBackground() + "')";
-// Render Projects //
-//const projectList = document.getElementById("projects-list");
-//
-//function renderProjects() {
-//    projectList.textContent = '';
-//    for (let i = 0; i < projects.projectsList.length; i+=1) {
-//        const projectLink = document.createElement('a');
-//        projectLink.classList.add('project');
-//        projectLink.setAttribute('href', '#');
-//        projectLink.setAttribute('data-index', i);
-//        projectList.appendChild(projectLink);
-//
-//        projectLink.innerHTML = `
-//        <p>${projects.projectsList[i].title}</p>
-//        <a href="#" id="delete-btn" class="delete-btn">
-//            <img src="/dist/images/delete-circle-outline.svg" alt="delete">
-//        </a>`;
-//    }
-//}
-//
-//function createProjectDefault() {
-//    projectList.textContent = '';
-//    for (let i = 0; i < projects.projectsList.length; i+=1) {
-//
-//    }
-//}
+
+function createPage() {
+    
+}
 
 const loadWebsite =()=> {
+    createDefault();
     createModal();
     closeModal();
     createBackground();
