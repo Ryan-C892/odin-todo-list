@@ -217,7 +217,7 @@ section {
     padding: 40px;
 }
 
-#task-title {
+.task-title {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -229,7 +229,7 @@ section {
     width: 25%;
 }
 
-#task-title, h2, img[alt="list"] {
+.task-title, h2, img[alt="list"] {
     padding: 2.5px 5px 2.5px 5px;
     color: #E1E8ED;
 }
@@ -280,6 +280,7 @@ section {
     padding: 8px 16px;
     text-decoration: none;
 }
+/* Active Class */
 .active {
     color: #fff;
     background-color: #3786c7;
