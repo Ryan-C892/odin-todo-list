@@ -11,51 +11,31 @@
     <!--Main-->
     <main>
         <!--Header-->
-        <header class="project-list-header">
+        <header class="sidebar-header">
             <img src="/dist/images/folder-outline.svg" alt="folder">
             Task App
         </header>
         <!--Sidebar-->
         <aside id="sidebar">
-            <!--Sidebar Links-->
-            <div id="project-menu">
-                <a href="#" class="project-link">
-                    <img src="/dist/images/email-outline.svg" alt="folder">
-                    Inbox
-                </a>
-                <a href="#" class="project-link">
-                    <img src="/dist/images/calendar-today.svg" alt="folder">
-                    Today
-                </a>
-                <a href="#" class="project-link">
-                    <img src="/dist/images/calendar-month.svg" alt="folder">
-                    Next 7 days
-                </a>
-                <a href="#" class="project-link">
-                    <img src="/dist/images/alert-circle-outline.svg" alt="folder">
-                    Important
-                </a>
-                <a href="#" class="project-link">
-                    <img src="/dist/images/check-circle-outline.svg" alt="folder">
-                    Completed
-                </a>
-            </div>
             <!--Add/Delete List-->
             <div class="new-list-container">
-                <div class="new-list-header">
-                    <p class="project-title">Projects</p>
-                    <button class="add-modal" id="addProject" data-modal="projectModal">
-                        <img class="trigger" src="/dist/images/plus-circle.svg" alt="add">
-                    </button>
-                </div>
-                <ul id="project-list">
+                <p class="project-title">Projects</p>
+                <button class="open-modal" id="addProject" data-modal="projectModal">
+                    <img class="trigger" src="/dist/images/plus-circle.svg" alt="add">
+                </button>
+            </div>
+            <div id="project-list">
+                <button class="sidebar-item active-project" data-index="0">Default Project</button>
                     
-                </ul>
             </div>
         </aside>
         <!--ToDo Display-->
         <section id="task-container">
-            
+            <h2 class="task-title"><span id="currentProject"> Default Project </span><img src="/dist/images/format-list-bulleted.svg" alt="list"></h2>
+            <button class="edit-modal" id="editProject" data-modal="editModal"><span>Edit Tasks</span><img class="trigger" src="/dist/images/pencil.png" alt="edit"></button>
+            <button class="delete-modal" id="deleteModal" data-modal="deleteModal"><span>Delete Tasks</span><img class="trigger" src="/dist/images/delete-circle-outline.svg" alt="delete"></button>
+            <button class="open-modal" id="addToDo" data-modal="toDoModal"><span>Add Tasks</span><img class="trigger" src="/dist/images/plus-circle-outline.svg" alt="add"></button>
+            <table class="todo-container"><tbody id="task"></tbody></table>
         </section>
         <!--Add New ToDo List Modal-->
         <div id="toDoModal" class="modal-window modal">
@@ -82,6 +62,31 @@
                 </form>
             </div>
         </div>
+        <!--Edit ToDo List Modal-->
+        <div id="editToDoModal" class="modal-window modal">
+            <div class="modal-container">
+                <h2>Add a New ToDo List</h2>
+                <span id="closeToDo" class="close-modal"><img src="/dist/images/close.svg" alt="close-btn"></span>
+                <form action="#" id="editProjectForm">
+                    <label for="title" id="form-label">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Project Title">
+                    <br>
+                    <label for="date">Date</label>
+                    <input type="date" name="due-date" id="date">
+                    <br>
+                    <label for="priority">Priority</label>
+                    <select name="priority" id="priority">
+                        <option value="Not Important">Not Important</option>
+                        <option value="Important">Important</option>
+                        <option value="Very Important">Very Important</option>
+                    </select>
+                    <br>
+                    <label for="done">Done</label>
+                    <input type="checkbox" id="done" name="checkbox" value="">
+                    <input type="submit" value="Update" id="updateToDo"></input>
+                </form>
+            </div>
+        </div>
         <!--Add New Project Modal-->
         <div id="projectModal" class="modal-window modal">
             <div class="modal-container">
@@ -92,6 +97,19 @@
                     <input type="text" id="title" name="title" placeholder="Project Title">
                     <br>
                     <button type="submit" value="Submit" id="submitProject" onclick="return false">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!--Edit Project Modal-->
+        <div id="editProjectModal" class="modal-window modal">
+            <div class="modal-container">
+                <h2>Add a New Project</h2>
+                <span id="closeProject" class="close-modal"><img src="/dist/images/close.svg" alt="close-btn"></span>
+                <form action="#" id="editProjectForm">
+                    <label for="title" id="form-title">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Project Title">
+                    <br>
+                    <button type="submit" value="Submit" id="updateProject" onclick="return false">Update</button>
                 </form>
             </div>
         </div>

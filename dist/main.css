@@ -58,7 +58,7 @@ main {
 }
 
 /* Header Settings */
-.project-list-header {
+.sidebar-header {
     display: flex;
     align-items: center;
     position: fixed;
@@ -89,131 +89,51 @@ aside {
     background-color: #E1E8ED;
 }
 
-#project-menu {
+/* Project List Settings */
+#projectMenu {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: center;
-    width: 60%;
-    margin: 20px auto;
+    align-items: flex-start;
+    width: 100%;
+    margin: 10px auto;
 }
 
-.project-link {
+.sidebar-item {
     display: flex;
     align-items: center;
     text-decoration: none;
     font-size: 18px;
-    padding: 10px 10px;
-    margin-bottom: 8px;
+    padding-left: 10px;
     color: #14171A;
-    border-radius: 5px;
-}
-
-.project-link img {
-    width: 1.25em;
-    color: #000;
-    text-align: center;
-}
-
-.project-link.active {
-    background-color: #fff;
 }
 
 /* New Project Container */
 .new-list-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 18px;
     width: 100%;
-    min-height: calc(60vh - 456px);
-}
-
-.new-list-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding-bottom: 5px;
+    min-height: calc(60vh - 530px);
     border-bottom: 1px solid #14171A;
 }
 
-.new-list-header p {
+.new-list-container p {
     font-size: 1.2rem;
     font-weight: 700;
     margin: 0;
 }
 
-.addBtn {
-    display: flex;
-    text-align: center;
-    padding: 4px 6px;
-}
-
-#project {
-    display: flex;
-    justify-content: space-between;
-}
-
-.project {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #14171A;
-    width: 100%;
-    padding: 10px 10px;
-    margin-bottom: 0;
-    text-decoration: none;   
-    cursor: pointer;
-}
-
-.project p {
-    width: 151px;
-    font-weight: 500;
-    font-size: 1.2rem;
-}
-
-.delete-btn {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    margin: 15px 10px;
-    cursor: pointer;
-}
-
-.default-project-item {
-    color: #000;
-    padding: 12px 16px;
-    font-size: 1.15em;
-    width: 100%;
-    background-color: transparent;
-    border-top: 1px solid #657786;
-    border-bottom: 1px solid #657786;
-}
-
-.new-project-item {
-    color: #000;
-    padding: 12px 16px;
-    font-size: 1.15em;
-    width: 100%;
-    background-color: transparent;
-    border-top: 1px solid #657786;
-    border-bottom: 1px solid #657786;
-}
-
-#project-menu button:focus {
-    border-left: 5px solid #000;
-    background-color: #fff;
-}
-
 /* Data Display Settings */
 section {
     width: 85%;
+    height: 100vh;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    margin: 0px auto;
+    margin: 10px auto;
     padding: 40px;
 }
 
@@ -221,12 +141,10 @@ section {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex: 1;
     background-color: #657786;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 30px 0px 0px 0px;
     width: 25%;
+    border-radius: 5px;
+    margin: 30px 0px 30px 0px;
 }
 
 .task-title, h2, img[alt="list"] {
@@ -264,32 +182,11 @@ section {
     background-color: #E1E8ED;
 }
 
-/* Edit Settings */
-#edit {
-    margin: 3px 0px;
-}
-/* List Settings */
-#project-list {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-}
-#project-list li a {
-    display: flex;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
 /* Active Class */
-.active {
-    color: #fff;
-    background-color: #3786c7;
-    text-align: center;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 5px 8px rgba(0,0,0,0.25);
+.active-project {
+    border-left: 5px solid #000;
 }
-#project-list li a:hover:not(.active) {
+#projectMenu li a:hover:not(.active) {
     background-color: #3786c7;
     border-radius: 20px;
 }
@@ -304,21 +201,23 @@ section {
 }
 
 /* Add ToDo List Settings */
-.add-modal {
+.open-modal, .delete-modal, .edit-modal {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    margin: 0 5px 0 5px;
+    margin: 0 5px 10px 5px;
     background-color: #E1E8ED;
     border-radius: 5px;
 }
 
-#addToDo img {
+.open-modal img, .delete-modal img, .edit-modal img {
     margin-left: 10px;
+    width: 24px;
+    height: 24px;
 }
 
-.add-modal span {
+.open-modal span, .delete-modal span, .edit-modal span {
     font-size: 1rem;
 }
 

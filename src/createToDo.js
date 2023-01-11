@@ -1,7 +1,7 @@
 const createToDo =()=> {
     //Global Selectors
     const newTaskForm = document.getElementById("newProjectForm");
-
+    const editTaskForm = document.getElementById("editProjectForm");
     // Create a factory that creates "project" objects.
     // This project object should have at least title adn todos (array od todo items, empty by default).
     // Later add button that will call that function and create new projects.
@@ -75,8 +75,10 @@ const createToDo =()=> {
             div.className = `${className}`;
             div.appendChild(document.createTextNode(message));
             var newTaskForm = document.getElementById("newProjectForm");
+            var editTaskForm = document.getElementById("editTaskForm");
             var label = document.getElementById("form-label");
             newTaskForm.insertBefore(div, label);
+            editTaskForm.insertBefore(div, label);
             // Vanish
             setTimeout(() => document.querySelector('.validate').remove(), 5000);
             setTimeout(() => document.querySelector('.success').remove(), 5000);
@@ -123,6 +125,36 @@ const createToDo =()=> {
 
     // Add Task via Form 
     newTaskForm.addEventListener('submit', (e)=> {
+        e.preventDefault();
+        // Input values
+        var title = document.getElementById("title").value;
+        var date = document.getElementById("date").value;
+        var priority = document.getElementById("priority").value;
+        var done = document.getElementById("done").value;
+        // Validation
+        var todaysDate = new Date();
+        todaysDate.setHours(0,0,0,0);
+        if(title === '' || date === '' || priority === '') {
+            EventHandler.showAlert('Please fill in all fields.', 'validate');
+        } else if (new Date(date) < todaysDate) {
+            EventHandler.showAlert('This date has already passed! Please enter another date.', 'validate');
+        } else {
+            // Task
+            var task = new Task(title, date, priority, done);
+            console.log(task);
+            // Add Task to EventHandler
+            EventHandler.createTasks(task);
+            // Add Task to Storage
+            Storage.addTasks(task);
+            // Validation
+            EventHandler.showAlert('Success!', 'success');
+            //Clear Form
+            EventHandler.clearForm();
+        }
+    });
+
+    // Edit Task via Form 
+    editTaskForm.addEventListener('submit', (e)=> {
         e.preventDefault();
         // Input values
         var title = document.getElementById("title").value;
